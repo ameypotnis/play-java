@@ -9,5 +9,18 @@ GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code
 GET     /message                    controllers.AsyncController.message
 
+# Directors list (look at the default values for pagination parameters)
+GET     /directors                  controllers.DirectorController.list(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
+
+# Add computer
+POST    /api/directors                  controllers.DirectorController.save
+
+# Edit existing computer
+GET     /directors/:id              controllers.DirectorController.edit(id:Long)
+POST     /directors/:id              controllers.DirectorController.update(id:Long)
+
+# Delete a computer
+POST    /directors/:id/delete       controllers.DirectorController.delete(id:Long)
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

@@ -12,6 +12,8 @@ libraryDependencies ++= Seq(
   javaWs
 )
 
+libraryDependencies += "org.easytesting" % "fest-assert" % "1.4"
+
 resolvers += Resolver.url("Typesafe Ivy releases", url("https://repo.typesafe.com/typesafe/ivy-releases"))(Resolver.ivyStylePatterns)
 
 fork in run := true
